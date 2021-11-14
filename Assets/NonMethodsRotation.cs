@@ -6,6 +6,6 @@ public class NonMethodsRotation : MonoBehaviour
 
     private void Update()
     {
-        
+        tra.Rotate(0, 0, 5);
     }
 }

@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using TMPro;
 using UnityEngine;
 
 public class NonProperties : MonoBehaviour
@@ -9,11 +10,11 @@ public class NonProperties : MonoBehaviour
 
     public Camera bgc;
 
-    public bool fli;
+    public SpriteRenderer updown;
 
     private void Start()
     {
-        fli = GetComponent<SpriteRenderer>();
+        updown = GetComponent<SpriteRenderer>();
 
         // 攝影機深度
         print("攝影機的深度：" + cam.depth);
@@ -24,10 +25,11 @@ public class NonProperties : MonoBehaviour
         // 攝影機的背景顏色(隨機顏色)
         bgc.backgroundColor = Color.black;
 
-        // 圖片的上下翻面
-        // if (Input.GetKeyDown(KeyCode.DownArrow))
-        //    {
-        //     fli = false;
-        //    }
+        // 圖片上下顛倒
+        if (updown)
+        {
+            updown.flipY = true;
+        }
+
     }
 }
